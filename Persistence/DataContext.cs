@@ -47,11 +47,11 @@ namespace Persistence
                 b.HasKey(k => new { k.ObserverId, k.TargetId });
 
                 b.HasOne(o => o.Observer)
-                .WithMany(f => f.Followers)
+                .WithMany(f => f.Followings)
                 .OnDelete(DeleteBehavior.Cascade);
 
                 b.HasOne(o => o.Target)
-                .WithMany(f => f.Followings)
+                .WithMany(f => f.Followers)
                 .OnDelete(DeleteBehavior.Cascade);
             });
 
